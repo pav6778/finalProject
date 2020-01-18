@@ -1,0 +1,19 @@
+.content {
+    height: 96vh;
+
+}
+#neuroMap {
+    background-image: url('https://miro.medium.com/max/1100/1*vBIWWCFLLzZzGes1HcCJOw.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 5px 4px 10px rgb(0, 0, 0);
+    background-position-y: 1px;
+}
+#login {
+    background-color: rgba(199, 199, 199, 0.556);
+}
+#form {
+    margin: 30vh auto 0 auto;
+    width: 40vh;
+}
