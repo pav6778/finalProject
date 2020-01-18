@@ -7,6 +7,8 @@ import API from '../../utils/API'
 
 class Login extends Component {
 state = {
+    href: '/signup',
+    linkName: 'Sign up',
     message: "",
     alert: "",
     email: "",
@@ -46,11 +48,10 @@ redirect = () => {
     this.props.history.push('/tool')
 }
 
+
     render() {
-
-
         return <div>
-            <Nav isOnline={this.props.isOnline}/>
+            <Nav linkName={this.state.linkName} href={this.state.href}/>
             <div className="row content">
                 <div id="neuroMap" className="col-4">
                 </div>

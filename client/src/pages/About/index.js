@@ -4,11 +4,15 @@ import './style.css'
 
 class About extends Component {
 
+    state = {
+        linkName: "Sign in/Sign up",
+        href: "/login"
+    }
 
     render(){
        
     return <div>
-        <Nav isOnline={this.props.isOnline}/>
+        <Nav linkName={this.state.linkName} href={this.state.href}/>
         <div className="container content bg-light">
             <div id="aboutPage">
                 <h2 className="text-center">About</h2>

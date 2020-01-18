@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import { Stage, Layer, Line, Text } from 'react-konva';
 import Nav from '../../components/nav/Nav'
 import API from '../../utils/API'
+import '../../components/container/style.css'
+
 
 
 
 class Canvas extends Component {
 
     state = {
-        userOnline: false,
+        href: '/',
+        linkName: 'Log out',
         value: "",
         lines: [],
         x: 500,
@@ -18,11 +21,8 @@ class Canvas extends Component {
     componentDidMount() {
         API.getUsersInfo().then(res => {
             this.setState({ lines: res.data.lines })
-            if (res.data._id) {
-                this.setState({ userOnline: true })
-            } else {
-                this.setState({ userOnline: false })
-            }
+        }).catch(err => {
+            this.props.history.push('/login', { message: "Please login to view this resource", alert: "alert alert-warning" })
         })
     }
 
@@ -91,11 +91,13 @@ class Canvas extends Component {
 
 
     render() {
+
         return (
-            <div>
-                <Nav isOnline={this.state.userOnline} />
-                <div className="row">
-                    <div className="col-10">
+            <div className="content">
+                <Nav linkName={this.state.linkName} href={this.state.href} />
+                <div className="row m-0">
+
+                    <div className="col-xl-10 col-lg-9 col-md-8 col-sm-7 pl-0">
                         <div className="text-center mt-3">
                             <Stage
                                 width={window.innerWidth}
@@ -116,17 +118,23 @@ class Canvas extends Component {
                             </Stage>
                         </div>
                     </div>
-                    <div className="col-2 bg-light">
-                        <span>+Zoom in</span><span>|</span>
-                        <span>-Zoom out</span>
+                    <div className="tool col-xl-2 col-lg-3 col-md-4 col-sm-5 bg-light">
+                        <div className="row">
+                            <div className="col-6">
+                            <button className="btn">zoom +</button>
+                            </div>
+                            <div className="col-6">
+                            <button className="btn">zoom -</button>
+                            </div>
+                        </div>
                         <div>
                             <form onSubmit={this.handleSubmit}>
-                                <input value={this.state.value} onChange={this.handleChange}></input>
-                                <input type="submit" value="Sumit"></input>
+                                <input className="form-control" value={this.state.value} onChange={this.handleChange}></input>
+                                <input className="form-control" type="submit" value="Add Text"></input>
                             </form>
                         </div>
                         <div>
-
+                            <input type="submit" value="clear" onClick={this.clearBtn}></input>
 
                         </div>
                     </div>

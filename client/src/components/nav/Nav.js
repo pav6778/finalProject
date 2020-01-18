@@ -5,36 +5,41 @@ import './style.css'
 class Nav extends Component{
 
     state = {
-        linkName: "",
-        hrefName: ""
+        linkName: "Log out",
+        href: "/"
     }
 
-
-UNSAFE_componentWillMount(){
-    console.log(this.props.isOnline)
-    if(this.props.isOnline === true) {
-        this.setState({linkName: "Logout", href: "/"})
-    }else{
-        this.setState({linkName: "Sign up", href: "/signup"})
+    componentDidMount(){
+        this.setState({linkName: this.props.linkName, href:this.props.href})
     }
-}
 redirectHandler(){
         API.logOut().then(res => {console.log(res)})
 }
 
+displayLink(){
+if(this.state.linkName === "Log out"){
+    return <div><li className="nav-item">
+    <a className="nav-link" onClick={this.redirectHandler} href="/" >Log out</a>
+     </li></div>
+}else{
+    return <div><li className="nav-item">
+    <a className="nav-link"  href={this.props.href} >{this.props.linkName}</a>
+     </li></div>
+}
+}
     render(){
-    return <div className="navbar navbar-expand bg-dark ">
-    <a className="navbar-brand" href="/"><h1 className="font-weight-light ml-3 text-light">MindSplash </h1></a>
+    return <div className="navbar fixed-top bg-dark ">
+    <a id="appName" className="navbar-brand" href="/"><h1 className="ml-3 text-warning">MindSplash </h1></a>
 <ul className="nav ml-md-auto">
+     
      <li className="nav-item">
          <a className="nav-link active" href="/about">About</a>
     </li>
-    <li className="nav-item">
-<a className="nav-link" href="/login">Login</a>
-    </li>
-    <li className="nav-item">
-        <a className="nav-link" onClick={this.redirectHandler} href={this.state.href} >{this.state.linkName}</a>
-     </li>
+    
+    <div>
+        {this.displayLink()}
+    </div>
+    
 </ul>
 </div>
 }

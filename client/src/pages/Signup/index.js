@@ -10,6 +10,8 @@ class Signup extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            href: '/login',
+            linkName: 'Login',
             email: "",
             password: "",
             message: "",
@@ -49,7 +51,7 @@ class Signup extends Component {
     render() {
 
         return <div>
-            <Nav/>
+            <Nav linkName={this.state.linkName} href={this.state.href}/>
             <div className="row content">
                 <div id="neuroMap" className="col-4">
                 </div>

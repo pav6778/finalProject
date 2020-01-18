@@ -1,7 +1,7 @@
 #image {
     background-image: url("./logo.png");
-    background-size: 700px;
+    background-size: 800px;
     background-repeat: no-repeat;
     background-position: center;
-    height: 50vh;
+    height: 80vh;
 }

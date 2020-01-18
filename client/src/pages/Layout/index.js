@@ -3,14 +3,23 @@ import './style.css'
 import Nav from '../../components/nav/Nav'
 
 class Layout extends Component{
+    state = {
+        linkName: "Sign in/Sign up",
+        href: "/login"
+
+    }
+
+    btnRedirect(){
+     window.location.href = "/tool"  
+    }
     render(){
     return <div>
         <div className="container-full">
-        <Nav isOnline={this.props.isOnline}/>
+        <Nav linkName={this.state.linkName} href={this.state.href}/>
             <div id="image">
             </div>
             <div className="text-center">
-                <button className="btn btn-lg bg-info">Enter</button>
+                <button onClick={this.btnRedirect}className="btn btn-lg bg-warning">Click here to splash ideas</button>
             </div>
         </div>
 
