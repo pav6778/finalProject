@@ -28,12 +28,12 @@ if(this.state.linkName === "Log out"){
 }
 }
     render(){
-    return <div className="navbar fixed-top bg-dark ">
-    <a id="appName" className="navbar-brand" href="/"><h1 className="ml-3 text-warning">MindSplash </h1></a>
+    return <div className="navbar shadow sticky-top bg-light ">
+    <a id="appName" className="navbar-brand" href="/"><h1 className="ml-3 text-danger">MindSplash </h1></a>
 <ul className="nav ml-md-auto">
      
      <li className="nav-item">
-         <a className="nav-link active" href="/about">About</a>
+         <a className="nav-link active" href="/about">Info</a>
     </li>
     
     <div>

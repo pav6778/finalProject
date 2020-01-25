@@ -1,5 +1,5 @@
 .shadow {
-    box-shadow: 0px 10px 10px rgb(113, 113, 113) !important;
+    box-shadow: 0 5px 10px rgb(190, 190, 190) !important;
 }
 
 #appName {
@@ -9,11 +9,17 @@
 /* font-family: 'Chakra Petch', sans-serif; */
 /* font-family: 'Chango', cursive; */
 /* font-family: 'Cinzel Decorative', cursive; */
-font-family: 'Cinzel', serif;
+/* font-family: 'Cinzel', serif; */
 /* font-family: 'Codystar', cursive; */
 /* font-family: 'Diplomata', cursive; */
-/* font-family: 'Julius Sans One', sans-serif; */
+font-family: 'Julius Sans One', sans-serif;
 /* font-family: 'Monofett', cursive; */
 /* font-family: 'Montserrat Subrayada', sans-serif;  */
 
+}
+.navbar {
+    border-bottom: 1px rgb(237, 237, 237) solid !important;
+}
+.nav-link{
+font-family: 'Chango', cursive;
 }
