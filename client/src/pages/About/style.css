@@ -1,9 +1,8 @@
 .content {
     height: 96vh;
-
+    margin: 0 auto 0 auto !important;
 }
 #aboutPage {
     padding: 60px;
     color: rgb(80, 80, 80);
-
 }

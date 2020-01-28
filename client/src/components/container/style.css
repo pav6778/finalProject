@@ -1,14 +1,15 @@
 .content {
-    height: 96vh;
+    height: 100%;
+    margin: 0;
 
 }
 #neuroMap {
-    background-image: url('https://miro.medium.com/max/1100/1*vBIWWCFLLzZzGes1HcCJOw.jpeg');
+    background-image: url('./mindmap.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     box-shadow: 5px 4px 10px rgb(0, 0, 0);
-    background-position-y: 1px;
+    background-position-y: -110px;
 }
 #login {
     background-color: rgba(199, 199, 199, 0.556);
@@ -16,4 +17,80 @@
 #form {
     margin: 30vh auto 0 auto;
     width: 40vh;
+}
+.tool {
+    background-color: rgb(210, 210, 210) !important;
+    height: 100%;
+    padding: 0.7%;
+}
+
+
+.redo{
+    background-image: url('./icons8-redo-50.png');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    height: 70px;
+    background-position-x: center;
+}
+.undo {
+    background-image: url('./icons8-undo-50.png');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    height: 70px;
+    background-position-x: center;
+}
+.drag {
+    background-image: url('./icons8-drag-48.png');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    height: 80px;
+    background-position-x: center;
+}
+.draw {
+    background-image: url('./icons8-pencil-48.png');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    height: 80px;
+    background-position-x: center;
+}
+.delete {
+    background-image: url('./icons8-delete-48.png');
+    background-size: 30px;
+    background-repeat: no-repeat;
+}
+.zoomIn {
+    background-image: url('./icons8-ios-50.png');
+    background-size: 28px;
+    background-repeat: no-repeat;
+    height: 30px;
+    margin-bottom: 30px;
+
+}
+.zoomOut {
+    background-image: url('./icons8-ios-50-2.png');
+    background-size: 28px;
+    background-repeat: no-repeat;
+    height: 30px;
+    margin-bottom: 30px;
+
+}
+.textBtn {
+    background-image: url('./icons8-text-30.png');
+    background-size: 28px;
+    background-repeat: no-repeat;
+    height: 80px;
+    background-position-x: center;
+
+}
+.textCursor {
+    cursor: text !important;
+}
+.crosshairCursor {
+    cursor: url('icons8-pencil-25.png') 5 20, auto !important;
+}
+.textCursor {
+    cursor: text !important;
+}
+.moveCursor {
+    cursor: move !important;
 }
