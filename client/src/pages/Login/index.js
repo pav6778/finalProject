@@ -38,10 +38,11 @@ logInFormHandler = evt => {
     evt.preventDefault()
   API.authenticate({email: this.state.email, password: this.state.password})
   .then(res => {
-      if(res.request.responseURL === "http://localhost:3000/"){
-      this.redirect()
-    }else{
-        this.setState({message: "email or password is incorrect", alert: "alert alert-danger"})
+      console.log(res.request)
+      if(res.request.responseURL.includes('/login')){
+          this.setState({message: "email or password is incorrect", alert: "alert alert-danger"})
+        }else{
+            this.redirect()
     }
   })
   .catch(err => console.log(err))

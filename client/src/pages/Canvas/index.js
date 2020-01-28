@@ -34,12 +34,9 @@ class Canvas extends Component {
 
     componentDidMount() {
         //loading user object 
-
         API.getUsersInfo().then(res => {
-            this.setState({ lines: res.data.lines, text: [...res.data.textData] })
-            console.log("%c this is the important part!!!","color: red")
-            console.log(res.data.textData)
-            console.log("%c XXXXXXXXXXXX","color: red")
+            this.setState({ lines: res.data.lines, text: res.data.textData.flat() })
+
         }).catch(err => {
             this.props.history.push('/login', { message: "Please login to view this resource", alert: "alert alert-warning" })
         })
@@ -48,8 +45,7 @@ class Canvas extends Component {
         if (prevState.text !== this.state.text) {
             textArr.push(this.state.text)
             console.log(textArr)
-            API.updateUsersInfo({ textData: [...textArr] }).then(res => {
-            })
+            API.updateUsersInfo({ textData: textArr.flat(Infinity) })
         }
     }
 
@@ -142,8 +138,9 @@ class Canvas extends Component {
         let choice = window.confirm("Are you sure? This action cannot be undone.");
         if (choice === true) {
             arr = []
-            API.updateUsersInfo({ lines: [], temp: [] }).then(res => {
-                this.setState({ lines: [], temp: [] })
+            textArr =[]
+            API.updateUsersInfo({ lines: [], temp: [], text: [] }).then(res => {
+                this.setState({ lines: [], temp: [], text: [] })
             })
         } else {
 
@@ -152,12 +149,6 @@ class Canvas extends Component {
     }
     pointCalc = (val, n) => {
         let pointVal = val * 4 / n
-        this.setState({ newPointVal: pointVal })
-        console.log("THIS IS CURRENT VALUE FOR B", this.state.b)
-        console.log("THIS IS CURRENT VALUE FOR A", n)
-        console.log("THIS IS CURRENT VALUE FOR ZOOM SCALE", this.state.zoom)
-        console.log("THIS IS CURRENT POINT VALUE ON SCALE", this.state.newPointVal)
-        console.log("–––————————————")
     }
     scaleUp = () => {
         let { a } = this.state
@@ -235,8 +226,7 @@ class Canvas extends Component {
                             >
 
                                 <Layer>
-
-                                    {textArr.map((text, i) => (
+                                    {textArr.flat().map((text, i) => (
                                         <Text key={i} text={text.body} fontSize={40} x={text.mouseX} y={text.mouseY} stroke={text.color} />
                                         // console.log(text)
                                     ))}
