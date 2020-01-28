@@ -63,10 +63,34 @@
     background-size: 28px;
     background-repeat: no-repeat;
     height: 30px;
+    margin-bottom: 30px;
+
 }
 .zoomOut {
     background-image: url('./icons8-ios-50-2.png');
     background-size: 28px;
     background-repeat: no-repeat;
     height: 30px;
+    margin-bottom: 30px;
+
+}
+.textBtn {
+    background-image: url('./icons8-text-30.png');
+    background-size: 28px;
+    background-repeat: no-repeat;
+    height: 80px;
+    background-position-x: center;
+
+}
+.textCursor {
+    cursor: text !important;
+}
+.crosshairCursor {
+    cursor: url('icons8-pencil-25.png') 5 20, auto !important;
+}
+.textCursor {
+    cursor: text !important;
+}
+.moveCursor {
+    cursor: move !important;
 }

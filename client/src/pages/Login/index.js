@@ -21,14 +21,16 @@ componentDidMount(){
     }
 }
 
-propsMessage =() => {
+propsMessage = () => {
     this.setState({message: this.props.history.location.state.message, alert: this.props.history.location.state.alert, email: this.props.history.location.state.email})
 }
 
 emailInput = evt =>{
+    
     this.setState({email: evt.target.value})
 }
 passwordInput = evt => {
+
     this.setState({password: evt.target.value})
 }
 
@@ -61,12 +63,12 @@ redirect = () => {
                             <div className={this.state.alert} onChange={this.propsMessage}>{this.state.message}</div>
                             <div className="form-group">
                                 <label>Email address</label>
-    <input type="email" value={this.state.email} className="form-control" aria-describedby="emailHelp" placeholder="Enter email" onChange={this.emailInput}></input>
+                                <input type="email"  className="form-control" placeholder="Enter email" onChange={this.emailInput}></input>
                                 <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                             </div>
                             <div className="form-group">
                                 <label>Password</label>
-                                <input type="password" value={this.state.password} className="form-control"  placeholder="Password" onChange={this.passwordInput}></input>
+                                <input type="password" className="form-control"  placeholder="Password" onChange={this.passwordInput}></input>
                             </div>
                             <div className="form-group form-check">
 

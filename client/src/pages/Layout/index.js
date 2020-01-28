@@ -19,7 +19,7 @@ class Layout extends Component{
             <div id="image">
             </div>
             <div className="text-center">
-                <button onClick={this.btnRedirect}className="btn btn-lg bg-warning">Click here to splash ideas</button>
+                <button onClick={this.btnRedirect}className="btn btn-lg bg-light">Click here to splash ideas</button>
             </div>
         </div>
 
