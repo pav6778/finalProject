@@ -1,6 +1,6 @@
 # MindSplash
 
-MindSplash is a graphing tool built on the concept of mind mapping. Using HTML5 canvas, its purpose is to help visualize difficult to concepts, support brainstorming, organize and structure knowledge. 
+MindSplash is a graphing tool built on the concept of mind mapping. Using HTML5 canvas, its purpose is to help visualize difficult concepts, support brainstorming, organize and structure knowledge. 
 
 # What is mind mapping?
 Mind Mapping is a technique invented by an English author and educational consultant Tony Buzan. 
