@@ -104,7 +104,7 @@ class Canvas extends Component {
     }
 
     handleSubmit = (e) => {
-        this.setState({ text: { id: this.state.id, body: this.state.value, mouseX: this.state.mouseX * 2, mouseY: this.state.mouseY * 2} })
+        this.setState({ text: { id: this.state.id, body: this.state.value, mouseX: this.state.mouseX * 2, mouseY: this.state.mouseY * 2 - 50} })
     }
     undoBtn = () => {
         arr = []
@@ -149,6 +149,7 @@ class Canvas extends Component {
     }
     pointCalc = (val, n) => {
         let pointVal = val * 4 / n
+        this.setState({ newPointVal: pointVal })
     }
     scaleUp = () => {
         let { a } = this.state
@@ -227,7 +228,7 @@ class Canvas extends Component {
 
                                 <Layer>
                                     {textArr.flat().map((text, i) => (
-                                        <Text key={i} text={text.body} fontSize={40} x={text.mouseX} y={text.mouseY} stroke={text.color} />
+                                        <Text key={i} text={text.body} fontSize={40} x={text.mouseX} y={text.mouseY} draggable={true} stroke={text.color} />
                                         // console.log(text)
                                     ))}
                                 </Layer>
