@@ -13,10 +13,9 @@ Its one of the other ways to take notes, and organize information.
 3. Now that you are logged in and redirected to the tool page, you can begin adding text and drawing on canvas.
 
 
-Deployed to Heroku @:
+**Deployed to Heroku @:**
 https://pure-castle-06277.herokuapp.com/
 
-**test login and password**
-
-**login:** test@gmail.com
-**password:** qweqweqwe
+**test login and password:**
+ "test@gmail.com"
+ "qweqweqwe"
