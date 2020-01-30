@@ -11,3 +11,7 @@ Its one of the other ways to take notes, and organize information.
 1. Navigate to "Sign up" link and register, it is required for you to be able to use the Mindsplash tool and save your mind maps.
 2. After registration log in with your email and password.
 3. Now that you are logged in and redirected to the tool page, you can begin adding text and drawing on canvas.
+
+
+Link to Heroku:
+https://pure-castle-06277.herokuapp.com/
