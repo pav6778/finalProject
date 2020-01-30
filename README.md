@@ -15,3 +15,8 @@ Its one of the other ways to take notes, and organize information.
 
 Deployed to Heroku @:
 https://pure-castle-06277.herokuapp.com/
+
+test login and password
+
+login: test@gmail.com
+password: qweqweqwe
